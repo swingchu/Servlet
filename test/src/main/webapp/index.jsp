@@ -20,8 +20,12 @@
         </form>
 
         <form action="doGetTest" method="POST">
-            名字 : <input type="text" name="first_name"> <br>
-            姓氏 : <input type="text" name="last_name"> <br>
+            你的興趣是 : <br>
+            <input type="checkbox" name="habbit" value="運動"/>運動 <br>
+            <input type="checkbox" name="habbit" value="音樂"/>音樂 <br>
+            <input type="checkbox" name="habbit" value="繪畫"/>繪畫 <br>
+            <input type="checkbox" name="habbit" value="閱讀"/>閱讀 <br>
+            <input type="checkbox" name="habbit" value="電影"/>電影 <br>
             <input type="submit" value="doPost Form Test">
         </form>
 
