@@ -3,10 +3,17 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
  <web-app>
-  <display-name>My App</display-name>
+  <display-name>Servlet Test</display-name>
+  <!-- This is a context init parameter -->
+  <context-param>
+    <param-name>welcome_msg</param-name>
+    <param-value>Welcome to the Servlet Test</param-value>
+  </context-param>
+
   <servlet>
     <servlet-name>IndexJSP</servlet-name>
     <jsp-file>/index.jsp</jsp-file>
+    <!-- This is servlet init parameter -->
     <init-param>
       <param-name>defaultGuestName</param-name>
       <param-value>Guest</param-value>
@@ -21,6 +28,12 @@
     <servlet-class>com.example.doGetTest</servlet-class>
   </servlet>
 
+  <!-- servlet init parameter need a servlet-mapping -->
+  <servlet-mapping>
+    <servlet-name>IndexJSP</servlet-name>
+    <url-pattern>/index.jsp</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
