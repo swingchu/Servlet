@@ -23,20 +23,24 @@ public class doGetTest extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
         throws IOException, ServletException
     {
+        response.setContentType("text/html;charset=UTF-8");
         String first_name = request.getParameter("first_name");
         String last_name = request.getParameter("last_name");
 
-        response.setContentType("text/html;charset=UTF-8");
-
         PrintWriter out = response.getWriter();
-
-        out.println("<h1> Hi, " + first_name + " " + last_name + "</h1>");
+        out.println("<b>doGet test : " + first_name + " " + last_name + "</b>");
 
     }    
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+            request.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=UTF-8");
+            String first_name = request.getParameter("first_name");
+            String last_name = request.getParameter("last_name");
 
+            PrintWriter out = response.getWriter();
+            out.println("<b>doPost test : " + first_name + " " + last_name + " </br>");
     }
 
 }
