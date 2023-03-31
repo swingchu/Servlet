@@ -19,10 +19,10 @@
       <param-value>Guest</param-value>
     </init-param>
   </servlet>
-  <servlet>
+<!--   <servlet>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>com.example.HelloServlet</servlet-class>
-  </servlet>
+  </servlet> -->
   <servlet>
     <servlet-name>doGetTest</servlet-name>
     <servlet-class>com.example.doGetTest</servlet-class>
@@ -34,10 +34,10 @@
     <url-pattern>/index.jsp</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
+<!--   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <servlet-mapping>
     <servlet-name>doGetTest</servlet-name>
     <url-pattern>/doGetTest</url-pattern>

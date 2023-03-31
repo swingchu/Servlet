@@ -11,7 +11,7 @@
         <hr>
 
         <h2>doGetTest</h2>
-        <a href="HelloServlet">Hello Servlet</a><br>
+        <a href="hello?name=Guest">Hello Servlet</a><br>
         <a href="doGetTest?first_name=swing&last_name=chu">doGet Test</a>
         <form action="doGetTest" method="GET">
             名字 : <input type="text" name="first_name"> <br>
