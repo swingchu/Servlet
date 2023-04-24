@@ -29,5 +29,8 @@
             <input type="submit" value="doPost Form Test">
         </form>
 
+        <hr>
+        <h2><a href="/testmvc">Test MVC</a><br></h2>
+        
     </body>
 </html>
