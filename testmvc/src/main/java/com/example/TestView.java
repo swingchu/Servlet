@@ -18,6 +18,7 @@ public class TestView extends HttpServlet{
       + "  </head>"
       + "  <body>"
       + "    <h1>%s</h1>"
+      + "    <a href='/testmvc'>back</a>"
       + "  </body>"
       + "</html>";
 

@@ -12,6 +12,9 @@ public class TestModel {
     
     public String doHello(String user) {
         String message = messages.get(user);
+        if (message == null) {
+            message="Nice to meet you";
+        }
         return String.format("%s, %s!", message, user);
     }
 }
