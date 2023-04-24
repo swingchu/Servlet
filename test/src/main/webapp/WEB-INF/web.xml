@@ -23,6 +23,7 @@
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>com.example.HelloServlet</servlet-class>
   </servlet> -->
+
   <servlet>
     <servlet-name>doGetTest</servlet-name>
     <servlet-class>com.example.doGetTest</servlet-class>
@@ -42,4 +43,5 @@
     <servlet-name>doGetTest</servlet-name>
     <url-pattern>/doGetTest</url-pattern>
   </servlet-mapping>
+
 </web-app>
