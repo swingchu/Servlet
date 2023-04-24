@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/hello")
+@WebServlet("/helloControl")
 public class TestControl extends HttpServlet{
     private TestModel model = new TestModel();
     @Override
@@ -17,6 +17,6 @@ public class TestControl extends HttpServlet{
             String name = request.getParameter("user");
             String message = model.doHello(name);
             request.setAttribute("message", message);
-            request.getRequestDispatcher("testmvc.view").forward(request, response);
+            request.getRequestDispatcher("helloView").forward(request, response);
         }
 }

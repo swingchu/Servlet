@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/testmvc.view")
+@WebServlet("/helloView")
 public class TestView extends HttpServlet{
     private String htmlTemplate = 
         "<!DOCTYPE html>"

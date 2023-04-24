@@ -5,7 +5,7 @@
     </head>
     <body>
         <h2>Test MVC</h2>
-        <form action="Control" method="GET">
+        <form action="helloControl" method="GET">
             您的暱稱 : <input type="text" name="user"> <br>
             <input type="submit" value="GO">
         </form>
