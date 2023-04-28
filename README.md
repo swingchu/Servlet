@@ -99,6 +99,7 @@ D:\install\apache-maven-3.9.0\conf\setting.xml
     -> maven-archetype-webapp
     -> group id : com.example
     -> artifact id : demo
+- Select Destnation Folder , the demo/ folder will be created in it.
 - 或是點選 MAVEN Section 的 "+" 也可以增加 Servlet 專案
 
 ### 2. 修改 pom.xml
