@@ -59,23 +59,6 @@ D:\install\apache-maven-3.9.0\bin\mvn
 - Java › Configuration › Maven: Global Settings
 D:\install\apache-maven-3.9.0\conf\setting.xml
 
-
-### 5. Java Projects
-- 建立 Java 專案後會出現
-- 可以拉到最左側快捷欄
-- Configure Java Runtime 可以修改 JDK 使用版本
-- Configure Classpath 設定 java 目錄
-    - Select the project folder : 選擇 PROJECT_FOLDER
-    - Sources : 設定為 src
-    - Output : 設定為 bin
-    - Referenced Libraries : 設定外部 .jar 路徑
-- 建立新類別
-    - 按 src/ 旁邊的 + , 可以建立新類別
-- 建立 package
-    - src/ 按右鍵 -> New package
-    - package名稱為了避免重覆, 命名上通常會把公司網址倒過來, 例如 com.cht.wjchu.pkg1
-    - 會在 src/ 下自動建立 package 的階層目錄
-
 ## 建立新專案
 - Java Help Center(Shift + F1)
     -> Create a New Project, 
@@ -90,8 +73,8 @@ D:\install\apache-maven-3.9.0\conf\setting.xml
 - settings.json : 觀察 sourcePaths, outputPath, referencedLibraries 的設定是否正確
 - App.java : 自動產生的 Hello World程式, 第一次開啟會自動 compile
 
-## Servlet 專案設定
 
+## Servlet 專案設定
 ### 1. 建立 Servlet 專案
 - Command(Ctrl+Shift+P) : 
     - Java : Create Java Project ...
@@ -116,7 +99,7 @@ D:\install\apache-maven-3.9.0\conf\setting.xml
 ```
 
 ### 3. 加入 dependency
-- 展開 MAVEN Section > Dependencies > 點 + > 輸入 javax.servlet > 選擇 javax.servlet-api
+- 展開 MAVEN Section > demo Maven WebApp > Dependencies > 點 + > 輸入 javax.servlet > 選擇 javax.servlet-api
 - 檢視 pom.xml 會自動增加 javax.servlet dependency
 ```
     <dependency>
@@ -126,7 +109,7 @@ D:\install\apache-maven-3.9.0\conf\setting.xml
     </dependency>
 ```
 ### 4. Compile
-- 展開 MAVEN Section > demo Maven Webapp 按右鍵 > compile 確認編譯沒問題
+- 展開 MAVEN Section > demo Maven Webapp 按右鍵 > Run Maven Commands... > compile 確認編譯沒問題
 
 ### 5. 設定 Tomcat
 - 展開 SERVERS Section > Community Server Connector 按右鍵 > Start RSP Provider
@@ -136,15 +119,35 @@ D:\install\apache-maven-3.9.0\conf\setting.xml
 - 瀏覽 http://localhost:8080/ 可以成功瀏覽表示成功
 
 ### 6. 執行 Servlet
-- 展開 MAVEN > demo web app 按右鍵 > package 打包程式, 會產生檔案demo\target\demo.war
+- 展開 MAVEN Section > demo web app 按右鍵 > Run Maven Commands... > package 打包程式, 會產生檔案demo\target\demo.war
 - 展開 Servers > Tomcat 9.x 按右鍵 > Add Deployment > 點 File > 選擇 demo.war 佈署程式 > Parameter 選 No
 - 展開 Servers > Tomcat 9.x 按右鍵 > Publish Server (Full)
 - 開啟瀏覽器 > 輸入 http://localhost:8080/demo/ 確認可以成功執行
 
+### 7. 新增 JAVA file
+- 在 src/main/ 下新增目錄 java/
+- Java Projects 區塊 > 打開 demo > 點 src/main/java 右邊的 + > 輸入class名稱 com.example.HelloServlet > 會在對應目錄產生 HelloServlet.java
+
 ### 7. 修改程式後重新執行 Servlet
-- 展開 MAVEN > demo web app 按右鍵 > deploy 
+- 展開 MAVEN > demo web app 按右鍵 > Run Maven Commands... > deploy 
 - 開啟瀏覽器 > 輸入 http://localhost:8080/demo/ 確認可以成功執行
-- 
+
+## Java Projects 設定
+- 建立 Java 專案後會在側邊欄的 Explore 出現
+- 可以拖拉到最左側快捷欄
+- Configure Java Runtime 可以修改 JDK 使用版本
+- Configure Classpath 設定 java 目錄
+    - Select the project folder : 選擇 PROJECT_FOLDER
+    - Sources : 設定為 src
+    - Output : 設定為 bin
+    - Referenced Libraries : 設定外部 .jar 路徑
+- 建立新類別
+    - 按 src/ 旁邊的 + , 可以建立新類別
+- 建立 package
+    - src/ 按右鍵 -> New package
+    - package名稱為了避免重覆, 命名上通常會把公司網址倒過來, 例如 com.cht.wjchu.pkg1
+    - 會在 src/ 下自動建立 package 的階層目錄
+
 ## Trouble Shutting
 ### 1. 解決big5編碼的程式碼, 編譯失敗的問題
 - Windows 設定
