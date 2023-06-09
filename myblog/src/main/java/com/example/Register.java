@@ -33,6 +33,9 @@ public class Register extends HttpServlet {
         var username = request.getParameter("username");
         var password = request.getParameter("password");
         var password2 = request.getParameter("password2");
+        var code = request.getParameter("code");
+        String code2 = (String) request.getAttribute("code");
+
         var errors = new ArrayList<String>();
         if (!validateEmail(email)) {
             errors.add("未填寫電子郵件或格式不正確");
@@ -43,6 +46,9 @@ public class Register extends HttpServlet {
         if (!validatePassword(password, password2)) {
             errors.add("請確認密碼符合格式且輸入正確");
         }
+        // if (!validateCode(code, code2)) {
+        //     errors.add("驗證碼錯誤 : " + code + " != " + code2);
+        // }
 
         String path;
         if (errors.isEmpty()) {
@@ -73,6 +79,10 @@ public class Register extends HttpServlet {
         return password != null &&
                 passwdRegex.matcher(password).find() &&
                 password.equals(password2);
+    }
+
+    private boolean validateCode(String code, String code2){
+        return code != null && code.equals(code2);
     }
 
     private boolean tryCreateUser (

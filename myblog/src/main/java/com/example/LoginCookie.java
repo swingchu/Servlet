@@ -10,19 +10,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 
-@WebServlet("/login")
-public class Login extends HttpServlet{
+@WebServlet("/logincookie")
+public class LoginCookie extends HttpServlet{
     private final String USERS = "D:/_Documents/code/java/servlet/myblog/users";
-    private final String OK_PATH = "member.html";
+    private final String OK_PATH = "user.view";
     private final String ERROR_PATH = "index.html";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        var username = request.getParameter("username");
-        var password = request.getParameter("password");
-
-        response.sendRedirect(login(username, password)? OK_PATH : ERROR_PATH);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String page = login(username, password)? OK_PATH : ERROR_PATH;
+        if (page == OK_PATH) {
+            processCookie(request, response);
+        }
+        response.sendRedirect(page);
     }
 
     private boolean login(String username, String password)
@@ -47,5 +51,13 @@ public class Login extends HttpServlet{
 
         }
     }
+
+    private void processCookie(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException{
+            Cookie c = new Cookie("username", request.getParameter("username"));
+            c.setMaxAge(60*60*24*7);// 7 days
+            response.addCookie(c);
+    }
+
 }
 
