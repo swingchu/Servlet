@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/register")
 public class Register extends HttpServlet {
     private final String USERS = "D:/study/java/code/servlet/myblog/users";
-    private final String OK_PATH = "register_ok.view";
+    private final String OK_PATH = "user";
     private final String ERROR_PATH = "register_error.view";
 
     private final Pattern emailRegex = Pattern.compile(
@@ -33,8 +33,8 @@ public class Register extends HttpServlet {
         var username = request.getParameter("username");
         var password = request.getParameter("password");
         var password2 = request.getParameter("password2");
-        var code = request.getParameter("code");
-        String code2 = (String) request.getAttribute("code");
+        // var code = request.getParameter("code");
+        // String code2 = (String) request.getAttribute("code");
 
         var errors = new ArrayList<String>();
         if (!validateEmail(email)) {
@@ -81,9 +81,9 @@ public class Register extends HttpServlet {
                 password.equals(password2);
     }
 
-    private boolean validateCode(String code, String code2){
-        return code != null && code.equals(code2);
-    }
+    // private boolean validateCode(String code, String code2){
+    //     return code != null && code.equals(code2);
+    // }
 
     private boolean tryCreateUser (
         String email, String username, String password) throws IOException {

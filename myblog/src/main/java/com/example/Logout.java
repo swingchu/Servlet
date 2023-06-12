@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user")
-public class User extends HttpServlet {
+@WebServlet("/logout")
+public class Logout extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -21,11 +21,11 @@ public class User extends HttpServlet {
                 .findFirst();
 
             if (userCookie.isPresent()) {
-                String username = userCookie.get().getValue();
-                request.setAttribute("username", username);
-                request.getRequestDispatcher("user.view").forward(request, response);
-            } else {
-                response.sendRedirect("login.html");
+                Cookie cookie = new Cookie("username", "");
+                cookie.setMaxAge(0); // Set the maximum age of the cookie to 0, making it immediately invalid
+                response.addCookie(cookie);
             }
+            
+            response.sendRedirect("index.html");
     }
 }

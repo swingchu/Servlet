@@ -19,7 +19,8 @@ public class UserView extends HttpServlet {
     + "  </head>"
     + "  <body>"
     + "    <h1>%s 已登入</h1>"
-    + "    <a href ='index.html'>回首頁</a>"
+    + "    <p><a href='logout'>登出</a></p>"
+    + "    <p><a href ='index.html'>回首頁</a></p>"
     + "  </body>"
     + "</html>";
 
